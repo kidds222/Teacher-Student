@@ -1,7 +1,5 @@
 # Teacher-Student Knowledge Distillation System
 
-An advanced teacher-student knowledge distillation framework implementing dynamic teaching mechanisms, continual learning, and β-VAE architecture for deep generative model systems.
-
 ## Project Overview
 
 This system implements a complete teacher-student learning architecture, combining the following core technologies:
@@ -47,23 +45,6 @@ project/
 └── datasets/               # Dataset storage directory
 ```
 
-## Installation
-
-### 1. Create Conda Environment
-```bash
-conda create -n teacher_student python=3.8
-conda activate teacher_student
-```
-
-### 2. Install Dependencies
-```bash
-pip install torch torchvision torchaudio
-pip install numpy scipy matplotlib
-pip install tensorboard
-pip install scikit-learn
-pip install Pillow
-pip install tqdm
-```
 
 ## Usage Instructions
 
@@ -79,32 +60,6 @@ cd ..
 ### Step 2: Run Main Program
 ```bash
 python main.py
-```
-
-### Advanced Usage
-
-#### Custom Configuration
-Modify configuration files to customize experiment parameters:
-
-- `config/teacher_config.py`: Teacher network architecture and training parameters
-- `config/student_config.py`: Student network and β-VAE parameters  
-- `config/experiment_config.py`: Dataset, training, and evaluation settings
-
-#### Enable Mixed Sample Generation
-```bash
-python main.py --enable_mixed_samples
-```
-
-#### Generate Mixed Samples Only (requires checkpoint)
-```bash
-python main.py --mixed_samples_only --checkpoint path/to/checkpoint.pth
-```
-
-#### Evaluate Forgetting
-```bash
-cd scripts
-python evaluate_forgetting.py
-cd ..
 ```
 
 ## Configuration Details
@@ -128,7 +83,6 @@ cd ..
 
 - **MNIST**: Handwritten digit recognition
 - **Fashion-MNIST**: Fashion item classification
-- **CIFAR-10**: Natural image classification (experimental)
 
 Datasets will be automatically downloaded to the `./datasets/` directory.
 
@@ -157,35 +111,3 @@ Training results are saved in the `./results/` directory, including:
 - Adaptive distillation based on teacher performance
 - Feature-level and output-level knowledge transfer
 - Dynamic temperature adjustment
-
-## Evaluation Metrics
-
-- **FID Score**: Image quality assessment
-- **Reconstruction Loss**: VAE reconstruction quality
-- **Contrastive Loss**: Representation learning effectiveness
-- **Forgetting Score**: Knowledge retention analysis
-- **Knowledge Transfer Loss**: Knowledge transfer effectiveness
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Create a Pull Request
-
-## Contact
-
-For questions and support, please open an issue on GitHub.
-
-## System Requirements
-
-- Python 3.8+
-- PyTorch 1.9+
-- CUDA 10.2+ (GPU recommended)
-- RAM: 8GB+ (16GB+ recommended)
-- Storage: 5GB+ (for datasets and results)
